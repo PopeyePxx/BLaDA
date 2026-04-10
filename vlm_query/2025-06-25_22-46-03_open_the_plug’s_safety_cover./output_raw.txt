@@ -1,0 +1,7 @@
+    g^a: plug_safety_cover
+
+    g^t: grasptype_2
+
+    g^f: medium
+
+    g^r: thumb

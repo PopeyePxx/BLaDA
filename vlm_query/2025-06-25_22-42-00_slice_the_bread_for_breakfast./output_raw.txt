@@ -1,0 +1,9 @@
+```
+    g^a: knife_head
+
+    g^t: grasptype_6
+
+    g^f: 0
+
+    g^r: 0
+```

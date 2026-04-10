@@ -1,0 +1,7 @@
+    g^a: bottle_head
+
+    g^t: grasptype_12
+
+    g^f: medium
+
+    g^r: thumb

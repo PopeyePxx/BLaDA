@@ -1,0 +1,60 @@
+You are a robot assistant that extracts structured grasp constraints from natural language instructions. Each instruction must be parsed into the following 4 elements:
+
+- g_f^a: the graspable object part (e.g., screwdriver_handle, bottle_head)
+- g_f^t: the functional grasp type (e.g., grasptype_2)
+- g_f^f: the grasp force required (e.g., strong, medium, 0)
+- g_f^r: the finger used (e.g., thumb, index_finger, 0)
+
+Here is the natural language instruction:
+"grasp a screwdriver"
+
+Here is the prior knowledge for reference:
+- In task 'hold_electric_kettle001', the graspable component is 'electric_kettle_handle'.
+- In task 'hold_screwdriver025', the graspable component is 'screwdriver_handle'.
+- In task 'hold_screwdriver026', the graspable component is 'screwdriver_handle'.
+- In task 'hold_spatula002', the graspable component is 'spatula_handle'.
+- In task 'open_bottle013', the graspable component is 'bottle_head'.
+- In task 'open_bottle014', the graspable component is 'bottle_head'.
+- In task 'hold_hammer017', the graspable component is 'hammer_handle'.
+- In task 'hold_hammer018', the graspable component is 'hammer_handle'.
+- In task 'click_stapler004', the graspable component is 'stapler_button'.
+- In task 'click_stapler007', the graspable component is 'stapler_button'.
+- In task 'grip_pliers003', the graspable component is 'pliers_handle'.
+- In task 'grip_pliers004', the graspable component is 'pliers_handle'.
+- In task 'clamp_knife002', the graspable component is 'knife_head'.
+- In task 'grip_scissor000', the graspable component is 'scissor_handle'.
+- In task 'press_spray_bottle002', the required grasp force is 'strong'.
+- In task 'grip_pliers003', the required grasp force is 'medium'.
+- In task 'grip_pliers017', the required grasp force is 'medium'.
+- In task 'click_stapler000', the required grasp force is 'strong'.
+- In task 'click_stapler002', the required grasp force is 'strong'.
+- In task 'hold_hammer013', the required grasp force is '0'.
+
+Please follow the format below exactly.
+
+Examples:
+
+Instruction: "Hold the screwdriver and prepare to turn the screw."
+Output:
+- g_f^a: screwdriver_handle
+- g_f^t: grasptype_2
+- g_f^f: 0
+- g_f^r: 0
+
+Instruction: "Click the stapler quickly."
+Output:
+- g_f^a: stapler_button
+- g_f^t: grasptype_4
+- g_f^f: strong
+- g_f^r: thumb
+
+Instruction: "Open the bottle cap slowly."
+Output:
+- g_f^a: bottle_head
+- g_f^t: grasptype_12
+- g_f^f: medium
+- g_f^r: middle_finger
+
+Now, based on the following instruction, extract the tuple:
+Instruction: "grasp a screwdriver"
+Output:

@@ -1,0 +1,140 @@
+
+    def stage_subgoal_thumb_constraint(thumb_end_effector, keypoints):
+        """Align the thumb (joint 0) with handle top (role: press).
+
+        Control instructions:
+        - Finger: thumb (joint index: 0)
+        - Initial angle: 0.0 (radians, adjust dynamically)
+        - Initial force: 5.0 N (based on role: press)
+
+        Cost includes:
+        - Distance between thumb_end_effector and target region (keypoint 0)
+        - Force deviation based on role
+        """
+        # Distance cost: Align thumb_end_effector with target region
+        distance_cost = np.linalg.norm(thumb_end_effector - keypoints[0])
+
+        # Force cost: Deviation from target force
+        target_force = 5.0  # Target force in Newtons
+        current_force = 0.0  # Placeholder: Replace with force feedback for thumb
+        force_cost = abs(target_force - current_force)
+
+        # Combine costs (weights adjustable)
+        cost = distance_cost + 0.1 * force_cost
+        return cost
+    
+
+# Function name: stage_subgoal_thumb
+
+
+    def stage_subgoal_index_constraint(index_end_effector, keypoints):
+        """Align the index (joint 1) with handle side (role: support).
+
+        Control instructions:
+        - Finger: index (joint index: 1)
+        - Initial angle: 0.0 (radians, adjust dynamically)
+        - Initial force: 1.0 N (based on role: support)
+
+        Cost includes:
+        - Distance between index_end_effector and target region (keypoint 0)
+        - Force deviation based on role
+        """
+        # Distance cost: Align index_end_effector with target region
+        distance_cost = np.linalg.norm(index_end_effector - keypoints[0])
+
+        # Force cost: Deviation from target force
+        target_force = 1.0  # Target force in Newtons
+        current_force = 0.0  # Placeholder: Replace with force feedback for index
+        force_cost = abs(target_force - current_force)
+
+        # Combine costs (weights adjustable)
+        cost = distance_cost + 0.1 * force_cost
+        return cost
+    
+
+# Function name: stage_subgoal_index
+
+
+    def stage_subgoal_middle_constraint(middle_end_effector, keypoints):
+        """Align the middle (joint 2) with handle bottom front (role: support).
+
+        Control instructions:
+        - Finger: middle (joint index: 2)
+        - Initial angle: 0.0 (radians, adjust dynamically)
+        - Initial force: 1.0 N (based on role: support)
+
+        Cost includes:
+        - Distance between middle_end_effector and target region (keypoint 0)
+        - Force deviation based on role
+        """
+        # Distance cost: Align middle_end_effector with target region
+        distance_cost = np.linalg.norm(middle_end_effector - keypoints[0])
+
+        # Force cost: Deviation from target force
+        target_force = 1.0  # Target force in Newtons
+        current_force = 0.0  # Placeholder: Replace with force feedback for middle
+        force_cost = abs(target_force - current_force)
+
+        # Combine costs (weights adjustable)
+        cost = distance_cost + 0.1 * force_cost
+        return cost
+    
+
+# Function name: stage_subgoal_middle
+
+
+    def stage_subgoal_ring_constraint(ring_end_effector, keypoints):
+        """Align the ring (joint 3) with handle bottom middle (role: support).
+
+        Control instructions:
+        - Finger: ring (joint index: 3)
+        - Initial angle: 0.0 (radians, adjust dynamically)
+        - Initial force: 1.0 N (based on role: support)
+
+        Cost includes:
+        - Distance between ring_end_effector and target region (keypoint 0)
+        - Force deviation based on role
+        """
+        # Distance cost: Align ring_end_effector with target region
+        distance_cost = np.linalg.norm(ring_end_effector - keypoints[0])
+
+        # Force cost: Deviation from target force
+        target_force = 1.0  # Target force in Newtons
+        current_force = 0.0  # Placeholder: Replace with force feedback for ring
+        force_cost = abs(target_force - current_force)
+
+        # Combine costs (weights adjustable)
+        cost = distance_cost + 0.1 * force_cost
+        return cost
+    
+
+# Function name: stage_subgoal_ring
+
+
+    def stage_subgoal_pinky_constraint(pinky_end_effector, keypoints):
+        """Align the pinky (joint 4) with handle bottom rear (role: support).
+
+        Control instructions:
+        - Finger: pinky (joint index: 4)
+        - Initial angle: 0.0 (radians, adjust dynamically)
+        - Initial force: 1.0 N (based on role: support)
+
+        Cost includes:
+        - Distance between pinky_end_effector and target region (keypoint 0)
+        - Force deviation based on role
+        """
+        # Distance cost: Align pinky_end_effector with target region
+        distance_cost = np.linalg.norm(pinky_end_effector - keypoints[0])
+
+        # Force cost: Deviation from target force
+        target_force = 1.0  # Target force in Newtons
+        current_force = 0.0  # Placeholder: Replace with force feedback for pinky
+        force_cost = abs(target_force - current_force)
+
+        # Combine costs (weights adjustable)
+        cost = distance_cost + 0.1 * force_cost
+        return cost
+    
+
+# Function name: stage_subgoal_pinky
+

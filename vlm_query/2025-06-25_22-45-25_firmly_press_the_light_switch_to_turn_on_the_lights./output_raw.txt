@@ -1,0 +1,7 @@
+    g^a: light_switch
+
+    g^t: grasptype_4
+
+    g^f: strong
+
+    g^r: thumb

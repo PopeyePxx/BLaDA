@@ -1,0 +1,9 @@
+```
+    g^a: plug_head
+
+    g^t: grasptype_5
+
+    g^f: 0
+
+    g^r: 0
+```

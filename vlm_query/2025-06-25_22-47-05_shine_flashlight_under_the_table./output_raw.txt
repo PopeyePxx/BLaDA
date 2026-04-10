@@ -1,0 +1,9 @@
+```
+    g^a: flashlight_switch
+
+    g^t: grasptype_2
+
+    g^f: thumb
+
+    g^r: strong
+```

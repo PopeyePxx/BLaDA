@@ -1,0 +1,230 @@
+You are a robot assistant that extracts structured grasp constraints from natural language instructions. For each instruction, you must extract and output the following four elements, each with the following specific meaning:
+
+    g^a: The graspable object part.
+    If the instruction contains a functional operation intent, specify the fine-grained part of the object that is required to complete the function (e.g., screwdriver_button, flashlight_switch). If the task does not involve a functional part, specify the most critical part that needs to be grasped to accomplish the subsequent task (e.g., screwdriver_handle, bottle_head).
+
+    g^t: The functional grasp type (e.g., grasptype_2).
+    This type should be inferred from the prior knowledge provided. It should accurately reflect the operational intent in the current task.
+
+    g^r: The functional finger.
+    This refers to the specific finger that must be used to accomplish the functional intent in the instruction (e.g., thumb, index_finger, 0). For example, "use a drill to tighten a screw" typically requires the index finger to press the button; "turn on a flashlight" may require the thumb to press the switch; for "pick up the drill and hand it over," there is no special functional finger, so use 0.
+
+    g^f: The required grasp force (e.g., strong, medium, weak, 0).
+    This is the special force needed for the functional finger to execute the functional operation in the instruction. For example, "use a drill to tighten a screw" requires the index finger to maintain strong, continuous pressure on the button; "turn on a flashlight" may require the thumb to give a momentary strong press on the switch; for tasks like "pick up the drill and hand it over," no special force is needed for any finger, so use 0.
+
+Here is the natural language instruction:
+"Press the spray bottle to release liquid."
+
+Here is the prior knowledge for reference:
+- In task 'hold_electric_kettle001', the graspable component is 'electric_kettle_handle'.
+- In task 'hold_screwdriver025', the graspable component is 'screwdriver_handle'.
+- In task 'hold_spatula002', the graspable component is 'spatula_handle'.
+- In task 'open_bottle013', the graspable component is 'bottle_head'.
+- In task 'hold_hammer017', the graspable component is 'hammer_handle'.
+- In task 'click_stapler004', the graspable component is 'stapler_button'.
+- In task 'grip_pliers003', the graspable component is 'pliers_handle'.
+- In task 'clamp_knife002', the graspable component is 'knife_head'.
+- In task 'grip_scissor000', the graspable component is 'scissor_handle'.
+- In task 'press_spray_bottle002', the required grasp force is 'strong'.
+- In task 'grip_pliers003', the required grasp force is 'medium'.
+- In task 'click_stapler000', the required grasp force is 'strong'.
+- In task 'hold_hammer013', the required grasp force is '0'.
+- In task 'open_bottle003', the required grasp force is 'medium'.
+- In task 'hold_screwdriver024', the required grasp force is '0'.
+- In task 'clamp_plug002', the required grasp force is '0'.
+- In task 'hold_knife001', the required grasp force is '0'.
+- In task 'open_bottle021', the required grasp force is 'medium'.
+- In task 'hold_screwdriver002', the required grasp force is '0'.
+- In task 'click_stapler000', the involved fingers are 'thumb'.
+- In task 'press_spray_bottle000', the involved fingers are 'index_finger'.
+- In task 'grip_pliers000', the involved fingers are 'thumb'.
+- In task 'click_stapler025', the involved fingers are 'thumb'.
+- In task 'click_flashlights000', the involved fingers are 'thumb'.
+- In task 'hold_bottle014', the involved fingers are '0'.
+- In task 'open_bottle001', the involved fingers are 'middle_finger'.
+- In task 'hold_screwdriver026', the involved fingers are '0'.
+- In task 'hold_spatula001', the involved fingers are '0'.
+- In task 'clamp_plug000', the involved fingers are '0'.
+- In task 'click_electric_kettle001', the involved fingers are 'index_finger'.
+- In task 'hold_screwdriver002', the grasp type is 'grasptype_2'.
+- In task 'hold_knife002', the grasp type is 'grasptype_11'.
+- In task 'hold_electric_kettle001', the grasp type is 'grasptype_3'.
+- In task 'clamp_plug001', the grasp type is 'grasptype_5'.
+- In task 'hold_screwdriver024', the grasp type is 'grasptype_2'.
+- In task 'hold_bottle011', the grasp type is 'grasptype_7'.
+- In task 'open_bottle012', the grasp type is 'grasptype_12'.
+- In task 'hold_hammer035', the grasp type is 'grasptype_2'.
+- In task 'hold_bottle000', the grasp type is 'grasptype_7'.
+- In task 'click_stapler023', the grasp type is 'grasptype_4'.
+- In task 'click_flashlights000', the grasp type is 'grasptype_3'.
+- In task 'hold_screwdriver002', the graspable component is 'screwdriver_handle'.
+- In task 'clamp_plug000', the graspable component is 'plug_head'.
+- In task 'click_mouse000', the graspable component is 'mouse_button'.
+- In task 'hold_hammer002', the graspable component is 'hammer_handle'.
+- In task 'click_flashlights000', the graspable component is 'flashlights_switch'.
+- In task 'click_stapler000', the graspable component is 'stapler_button'.
+- In task 'press_drill000', the graspable component is 'drill_button'.
+- In task 'press_spray_bottle002', the graspable component is 'spray_bottle_button'.
+- In task 'hold_bottle004', the graspable component is 'bottle_body'.
+- In task 'hold_electric_kettle002', the graspable component is 'electric_kettle_handle'.
+- In task 'hold_electric_kettle002', the required grasp force is '0'.
+- In task 'click_electric_kettle001', the required grasp force is 'strong'.
+- In task 'hold_spatula003', the required grasp force is '0'.
+- In task 'hold_doorknob003', the involved fingers are '0'.
+- In task 'hold_doorknob003', the required grasp force is '0'.
+- In task 'hold_doorknob003', the graspable component is 'doorknob_handle'.
+- In task 'clamp_plug000', the required grasp force is '0'.
+- In task 'hold_screwdriver025', the required grasp force is '0'.
+- In task 'hold_bottle021', the required grasp force is '0'.
+- In task 'open_bottle000', the required grasp force is 'medium'.
+- In task 'click_mouse001', the required grasp force is 'weak'.
+- In task 'hold_hammer002', the required grasp force is '0'.
+- In task 'click_flashlights014', the required grasp force is 'strong'.
+- In task 'press_spray_bottle000', the required grasp force is 'strong'.
+- In task 'clamp_knife001', the required grasp force is '0'.
+- In task 'hold_spatula002', the involved fingers are '0'.
+- In task 'clamp_plug004', the involved fingers are '0'.
+- In task 'hold_knife001', the involved fingers are '0'.
+- In task 'hold_screwdriver023', the involved fingers are '0'.
+- In task 'open_bottle018', the involved fingers are 'middle_finger'.
+- In task 'hold_bottle021', the involved fingers are '0'.
+- In task 'press_drill001', the involved fingers are 'index_finger'.
+- In task 'hold_doorknob003', the grasp type is 'grasptype_8'.
+- In task 'open_bottle000', the involved fingers are 'middle_finger'.
+- In task 'click_mouse001', the involved fingers are 'index_finger'.
+- In task 'hold_hammer002', the involved fingers are '0'.
+- In task 'click_flashlights014', the involved fingers are 'thumb'.
+- In task 'grip_pliers017', the involved fingers are 'thumb'.
+- In task 'press_drill000', the grasp type is 'grasptype_1'.
+- In task 'clamp_knife002', the grasp type is 'grasptype_6'.
+- In task 'press_spray_bottle004', the grasp type is 'grasptype_1'.
+- In task 'grip_pliers000', the grasp type is 'grasptype_14'.
+- In task 'click_stapler000', the grasp type is 'grasptype_4'.
+- In task 'click_flashlights014', the grasp type is 'grasptype_3'.
+- In task 'click_mouse000', the grasp type is 'grasptype_10'.
+- In task 'hold_bottle021', the grasp type is 'grasptype_7'.
+- In task 'open_bottle000', the grasp type is 'grasptype_12'.
+- In task 'clamp_plug004', the grasp type is 'grasptype_5'.
+- In task 'hold_knife001', the grasp type is 'grasptype_11'.
+- In task 'click_electric_kettle001', the grasp type is 'grasptype_10'.
+- In task 'clamp_plug001', the grasp type is 'grasptype_5'.
+- In task 'clamp_knife001', the grasp type is 'grasptype_6'.
+- In task 'grip_scissor000', the grasp type is 'grasptype_13'.
+- In task 'press_spray_can003', the grasp type is 'grasptype_1'.
+- In task 'press_spray_bottle000', the grasp type is 'grasptype_1'.
+- In task 'grip_pliers002', the grasp type is 'grasptype_14'.
+- In task 'click_stapler002', the grasp type is 'grasptype_4'.
+- In task 'click_flashlights002', the grasp type is 'grasptype_3'.
+- In task 'open_valve000', the grasp type is 'grasptype_12'.
+- In task 'hold_doorknob000', the grasp type is 'grasptype_8'.
+- In task 'click_light_switch000', the grasp type is 'grasptype_10'.
+- In task 'click_mouse001', the grasp type is 'grasptype_10'.
+- In task 'hold_hammer002', the grasp type is 'grasptype_2'.
+- In task 'hold_bottle001', the grasp type is 'grasptype_7'.
+- In task 'open_bottle001', the grasp type is 'grasptype_12'.
+- In task 'hold_screwdriver002', the grasp type is 'grasptype_2'.
+- In task 'hold_spatula001', the grasp type is 'grasptype_2'.
+- In task 'clamp_plug000', the grasp type is 'grasptype_5'.
+- In task 'hold_knife002', the grasp type is 'grasptype_11'.
+- In task 'hold_electric_kettle001', the grasp type is 'grasptype_8'.
+- In task 'hold_knife001', the grasp type is 'grasptype_11'.
+- In task 'click_electric_kettle001', the grasp type is 'grasptype_10'.
+- In task 'press_drill000', the involved fingers are 'index_finger'.
+- In task 'clamp_knife001', the involved fingers are '0'.
+- In task 'grip_scissor000', the involved fingers are 'thumb'.
+- In task 'press_spray_can003', the involved fingers are 'index_finger'.
+- In task 'press_spray_bottle002', the involved fingers are 'index_finger'.
+- In task 'grip_pliers002', the involved fingers are 'thumb'.
+- In task 'click_stapler002', the involved fingers are 'thumb'.
+- In task 'click_flashlights002', the involved fingers are 'thumb'.
+- In task 'open_valve002', the involved fingers are 'middle_finger'.
+- In task 'hold_doorknob000', the involved fingers are '0'.
+- In task 'click_light_switch000', the involved fingers are 'index_finger'.
+- In task 'click_mouse000', the involved fingers are 'index_finger'.
+- In task 'hold_hammer035', the involved fingers are '0'.
+- In task 'hold_bottle000', the involved fingers are '0'.
+- In task 'open_bottle004', the involved fingers are 'middle_finger'.
+- In task 'hold_screwdriver002', the involved fingers are '0'.
+- In task 'clamp_plug001', the involved fingers are '0'.
+- In task 'hold_knife002', the involved fingers are '0'.
+- In task 'hold_electric_kettle001', the involved fingers are '0'.
+- In task 'click_electric_kettle002', the involved fingers are 'index_finger'.
+- In task 'press_drill000', the required grasp force is 'strong'.
+- In task 'clamp_knife002', the required grasp force is '0'.
+- In task 'grip_scissor000', the required grasp force is 'medium'.
+- In task 'press_spray_can003', the required grasp force is 'strong'.
+- In task 'grip_pliers000', the required grasp force is 'medium'.
+- In task 'click_stapler003', the required grasp force is 'strong'.
+- In task 'click_flashlights000', the required grasp force is 'strong'.
+- In task 'open_valve002', the required grasp force is 'medium'.
+- In task 'hold_doorknob000', the required grasp force is '0'.
+- In task 'click_light_switch000', the required grasp force is 'weak'.
+- In task 'click_mouse000', the required grasp force is 'weak'.
+- In task 'hold_hammer004', the required grasp force is '0'.
+- In task 'hold_bottle000', the required grasp force is '0'.
+- In task 'open_bottle001', the required grasp force is 'medium'.
+- In task 'hold_screwdriver003', the required grasp force is '0'.
+- In task 'hold_spatula001', the required grasp force is '0'.
+- In task 'clamp_plug001', the required grasp force is '0'.
+- In task 'hold_knife002', the required grasp force is '0'.
+- In task 'hold_electric_kettle001', the required grasp force is '0'.
+- In task 'click_electric_kettle002', the required grasp force is 'strong'.
+- In task 'clamp_knife001', the graspable component is 'knife_head'.
+- In task 'press_spray_can003', the graspable component is 'spray_can_button'.
+- In task 'press_spray_bottle000', the graspable component is 'spray_bottle_button'.
+- In task 'grip_pliers000', the graspable component is 'pliers_handle'.
+- In task 'click_stapler002', the graspable component is 'stapler_button'.
+- In task 'click_flashlights003', the graspable component is 'flashlights_switch'.
+- In task 'open_valve000', the graspable component is 'valve_head'.
+- In task 'hold_doorknob000', the graspable component is 'doorknob_handle'.
+- In task 'click_light_switch000', the graspable component is 'light_switch_switch'.
+- In task 'click_mouse001', the graspable component is 'mouse_button'.
+- In task 'hold_hammer005', the graspable component is 'hammer_handle'.
+- In task 'hold_bottle000', the graspable component is 'bottle_body'.
+- In task 'open_bottle000', the graspable component is 'bottle_head'.
+- In task 'hold_screwdriver003', the graspable component is 'screwdriver_handle'.
+- In task 'hold_spatula001', the graspable component is 'spatula_handle'.
+- In task 'clamp_plug001', the graspable component is 'plug_head'.
+- In task 'hold_knife001', the graspable component is 'knife_handle'.
+- In task 'click_electric_kettle001', the graspable component is 'electric_kettle_switch'.
+
+Please follow the exact format below for your output.
+
+Examples:
+
+Instruction: "Hold the screwdriver and prepare to turn the screw."
+Output:
+
+    g^a: screwdriver_handle
+
+    g^t: grasptype_1
+
+    g^f: strong
+
+    g^r: index_finger
+
+Instruction: "Click the stapler quickly."
+Output:
+
+    g^a: stapler_button
+
+    g^t: grasptype_4
+
+    g^f: strong
+
+    g^r: thumb
+
+Instruction: "Open the bottle cap slowly."
+Output:
+
+    g^a: bottle_head
+
+    g^t: grasptype_12
+
+    g^f: medium
+
+    g^r: middle_finger
+
+Now, based on the following instruction, extract the tuple:
+Instruction: "Press the spray bottle to release liquid."
+Output:

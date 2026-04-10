@@ -1,0 +1,6 @@
+def stage2_subgoal_constraint1(end_effector, keypoints):
+    """Ensure the hammer is positioned correctly to hammer the nail (keypoint 1)."""
+    target_keypoint = keypoints[1]
+    cost = np.linalg.norm(end_effector - target_keypoint) - 5  # Hammer should be 5cm above the nail
+    return cost
+

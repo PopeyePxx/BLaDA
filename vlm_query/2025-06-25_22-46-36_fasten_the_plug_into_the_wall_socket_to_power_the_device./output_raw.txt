@@ -1,0 +1,7 @@
+    g^a: plug_head
+
+    g^t: grasptype_2
+
+    g^f: strong
+
+    g^r: index_finger

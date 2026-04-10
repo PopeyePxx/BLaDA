@@ -1,0 +1,7 @@
+    g^a: bottle_cap
+
+    g^t: grasptype_2
+
+    g^f: strong
+
+    g^r: thumb

@@ -1,0 +1,9 @@
+```
+    g^a: scissor_handle
+
+    g^t: grasptype_13
+
+    g^f: medium
+
+    g^r: thumb
+```

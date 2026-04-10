@@ -1,0 +1,60 @@
+You are a robot assistant that extracts structured grasp constraints from natural language instructions. For each instruction, you must extract and output the following four elements, each with the following specific meaning:
+
+    g^a: The graspable object part.
+    If the instruction contains a functional operation intent, specify the fine-grained part of the object that is required to complete the function (e.g., screwdriver_button, flashlight_switch). If the task does not involve a functional part, specify the most critical part that needs to be grasped to accomplish the subsequent task (e.g., screwdriver_handle, bottle_head).
+
+    g^t: The functional grasp type (e.g., grasptype_2).
+    This type should be inferred from the prior knowledge provided. It should accurately reflect the operational intent in the current task.
+
+    g^r: The functional finger.
+    This refers to the specific finger that must be used to accomplish the functional intent in the instruction (e.g., thumb, index_finger, 0). For example, "use a drill to tighten a screw" typically requires the index finger to press the button; "turn on a flashlight" may require the thumb to press the switch; for "pick up the drill and hand it over," there is no special functional finger, so use 0.
+
+    g^f: The required grasp force (e.g., strong, medium, weak, 0).
+    This is the special force needed for the functional finger to execute the functional operation in the instruction. For example, "use a drill to tighten a screw" requires the index finger to maintain strong, continuous pressure on the button; "turn on a flashlight" may require the thumb to give a momentary strong press on the switch; for tasks like "pick up the drill and hand it over," no special force is needed for any finger, so use 0.
+
+Here is the natural language instruction:
+"Pull the scissors apart to open them."
+
+Here is the prior knowledge for reference:
+0
+
+Please follow the exact format below for your output.
+
+Examples:
+
+Instruction: "Hold the screwdriver and prepare to turn the screw."
+Output:
+
+    g^a: screwdriver_handle
+
+    g^t: grasptype_1
+
+    g^f: strong
+
+    g^r: index_finger
+
+Instruction: "Click the stapler quickly."
+Output:
+
+    g^a: stapler_button
+
+    g^t: grasptype_4
+
+    g^f: strong
+
+    g^r: thumb
+
+Instruction: "Open the bottle cap slowly."
+Output:
+
+    g^a: bottle_head
+
+    g^t: grasptype_12
+
+    g^f: medium
+
+    g^r: middle_finger
+
+Now, based on the following instruction, extract the tuple:
+Instruction: "Pull the scissors apart to open them."
+Output:

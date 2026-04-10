@@ -1,0 +1,57 @@
+You are an expert in robotic grasping and natural language understanding, specializing in dexterous manipulation with a five-finger robotic hand. Your task is to parse a high-level task instruction for a dexterous grasping task and infer the appropriate roles and target regions for each finger of a right-handed robotic hand. The robotic hand has five fingers: thumb, index finger, middle finger, ring finger, and pinky finger. To simplify control, assign roles to three main groups: the thumb, the index finger, and the remaining three fingers (middle, ring, pinky) as a single group. Each group may have a distinct role (e.g., "press," "control," "support," or "not used") and a target region on the object (e.g., "handle top," "switch," "handle side," "handle bottom," or "no target region"). The middle, ring, and pinky fingers should share the same role but may have slightly different target regions for precise positioning (e.g., distributed along the handle bottom).
+
+Given the following task instruction, perform the following steps:
+1. Identify the object to be grasped based on the task (e.g., screwdriver, pen, cup).
+2. Determine the action implied by the task (e.g., "use" for functional operation, "pick up" for simple grasping) and infer a stable and functional grasping strategy for the right hand.
+3. Assign roles and target regions to the three finger groups (thumb, index, remaining three fingers) to achieve a three-level granularity:
+   - Level 1: Object localization (confirm the object, e.g., screwdriver).
+   - Level 2: Overall grasp layout (position all relevant fingers around the object's handle or primary graspable area).
+   - Level 3: Specific finger group roles (e.g., thumb presses handle top, index controls switch for "use" task, remaining fingers support handle bottom).
+4. Output the results in a structured JSON format, with each finger as a key and its role and target region as values. The middle, ring, and pinky fingers should have the same role but may have distinct target regions (e.g., "handle bottom front," "handle bottom middle," "handle bottom rear").
+
+Task instruction: "$instruction"
+
+Assumptions:
+- The robotic hand is right-handed, and all operations are performed with the right hand.
+- The grasping strategy should be stable (using at least two finger groups for contact) and functional (enabling the task, e.g., operating a screwdriver).
+- The action in the task instruction (e.g., "use" vs. "pick up") determines specific roles and target regions:
+  - For "use a screwdriver," the index finger must be positioned at the switch (if applicable) with a "control" role to enable pressing or operation.
+  - For "pick up a screwdriver," the index finger can be positioned more flexibly (e.g., handle side) with a "support" role, as no switch operation is needed.
+- The middle, ring, and pinky fingers share a single role (e.g., "support") to simplify control, but their target regions may differ slightly to cover the handle (e.g., distributed along the handle bottom).
+- If the instruction is ambiguous, infer a typical dexterous grasp based on the object's features and task. For example, for a screwdriver:
+  - Thumb: Press on handle top.
+  - Index: Control switch (for "use") or support handle side (for "pick up").
+  - Middle/ring/pinky: Support handle bottom, distributed sequentially.
+
+Constraints:
+- Assign roles to at most three finger groups (thumb, index, remaining three fingers) to ensure control simplicity.
+- Ensure at least two finger groups are assigned roles (e.g., "press," "support") for a stable grasp.
+- For "use" tasks, prioritize functional roles (e.g., index finger at switch for control). For "pick up" tasks, prioritize stability over specific functionality.
+- The middle, ring, and pinky fingers must share the same role (e.g., "support") but can have distinct target regions for precise positioning.
+- Avoid conflicting roles for the same finger group (e.g., a group cannot both "press" and "not used").
+- The output must include all five fingers, even if some are "not used."
+- Target regions should reflect the object's geometry and task requirements (e.g., "handle top" for thumb, "switch" for index in "use" task).
+
+Example input 1:
+"use a screwdriver"
+
+Example output 1:
+{
+  "thumb": {"role": "press", "target_region": "handle top"},
+  "index": {"role": "control", "target_region": "switch"},
+  "middle": {"role": "support", "target_region": "handle bottom front"},
+  "ring": {"role": "support", "target_region": "handle bottom middle"},
+  "pinky": {"role": "support", "target_region": "handle bottom rear"}
+}
+
+Example input 2:
+"pick up a screwdriver"
+
+Example output 2:
+{
+  "thumb": {"role": "press", "target_region": "handle top"},
+  "index": {"role": "support", "target_region": "handle side"},
+  "middle": {"role": "support", "target_region": "handle bottom front"},
+  "ring": {"role": "support", "target_region": "handle bottom middle"},
+  "pinky": {"role": "support", "target_region": "handle bottom rear"}
+}

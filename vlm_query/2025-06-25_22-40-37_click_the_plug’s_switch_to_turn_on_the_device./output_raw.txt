@@ -1,0 +1,9 @@
+```
+    g^a: plug_switch
+
+    g^t: grasptype_10
+
+    g^f: strong
+
+    g^r: thumb
+```

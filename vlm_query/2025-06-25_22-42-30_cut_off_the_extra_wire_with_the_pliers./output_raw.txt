@@ -1,0 +1,9 @@
+```
+g^a: pliers_handle
+
+g^t: grasptype_14
+
+g^f: medium
+
+g^r: thumb
+```

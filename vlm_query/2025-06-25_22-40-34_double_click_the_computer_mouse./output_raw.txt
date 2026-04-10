@@ -1,0 +1,9 @@
+```
+    g^a: mouse_button
+
+    g^t: grasptype_10
+
+    g^f: index_finger
+
+    g^r: weak
+```

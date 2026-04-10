@@ -1,0 +1,23 @@
+Given the task instruction "grasp a screwdriver," we can infer the following:
+
+1. **Object to be grasped**: Screwdriver
+2. **Action implied by the task**: The instruction suggests a "pick up" action, as it does not specify using the screwdriver for a task like turning a screw. Therefore, the focus is on a stable grasp rather than functional operation.
+3. **Grasping strategy**:
+   - **Level 1**: Confirm the object is a screwdriver.
+   - **Level 2**: Position the fingers around the handle of the screwdriver for a stable grasp.
+   - **Level 3**: Assign roles and target regions:
+     - **Thumb**: Press on the handle top for stability.
+     - **Index Finger**: Support the handle side to help stabilize the grasp.
+     - **Middle, Ring, and Pinky Fingers**: Share the role of "support" with target regions distributed along the handle bottom for a secure grip.
+
+Based on this analysis, the structured JSON output for the task instruction "grasp a screwdriver" is as follows:
+
+```json
+{
+  "thumb": {"role": "press", "target_region": "handle top"},
+  "index": {"role": "support", "target_region": "handle side"},
+  "middle": {"role": "support", "target_region": "handle bottom front"},
+  "ring": {"role": "support", "target_region": "handle bottom middle"},
+  "pinky": {"role": "support", "target_region": "handle bottom rear"}
+}
+```

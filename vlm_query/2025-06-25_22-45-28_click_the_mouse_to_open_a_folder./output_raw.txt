@@ -1,0 +1,7 @@
+    g^a: mouse_button
+
+    g^t: grasptype_4
+
+    g^f: strong
+
+    g^r: index_finger

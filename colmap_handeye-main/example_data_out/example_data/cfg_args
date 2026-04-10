@@ -1,0 +1,1 @@
+Namespace(sh_degree=3, distill_feature_dim=32, feature_type='clip_part', source_path='/home/hun/code/GraspSplats-main/colmap_handeye-main/example_data', model_path='/home/hun/code/GraspSplats-main/colmap_handeye-main/example_data_out/example_data', images='images', resolution=-1, white_background=False, data_device='cuda', eval=False)

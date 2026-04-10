@@ -1,0 +1,101 @@
+Instruction,g^a,g^t,g^f,g^r
+Press the button on the electric kettle.,electric_kettle_switch,grasptype_10,strong,index_finger
+Gently press the switch on the flashlight.,flashlight_switch,grasptype_3,strong,thumb
+Press the spray bottle to release liquid.,spray_bottle_button,grasptype_1,strong,index_finger
+Use your finger to press the drill button.,drill_button,grasptype_1,strong,index_finger
+Press the mouse button to start the computer.,mouse_button,grasptype_10,weak,index_finger
+Press down the stapler to staple the paper.,stapler_body,grasptype_4,strong,thumb
+Firmly press the light switch to turn on the lights.,light_switch_switch,grasptype_10,weak,index_finger
+Press the valve to control water flow.,valve_head,grasptype_12,medium,middle_finger
+Press the scissors handle to cut the thread.,scissors_handle,grasptype_13,medium,thumb
+Press the plug firmly into the socket.,plug_head,grasptype_5,0,0
+Click the mouse to open a folder.,mouse_button,grasptype_10,weak,index_finger
+Quickly click the button on the stapler.,stapler_button,grasptype_4,strong,thumb
+Click the electric kettle switch to boil water.,electric_kettle_switch,grasptype_10,strong,index_finger
+Click the flashlight button to turn on the light.,flashlight_switch,grasptype_3,strong,thumb
+Click the spray bottle nozzle for mist.,spray_bottle_button,grasptype_1,strong,index_finger
+Click the valve head to release air.,valve_head,grasptype_12,medium,middle_finger
+Click the light switch with your index finger.,light_switch_switch,grasptype_10,weak,index_finger
+Double click the computer mouse.,mouse_button,grasptype_10,weak,index_finger
+Click the drill button to start drilling.,drill_button,grasptype_1,strong,index_finger
+Click the plug’s switch to turn on the device.,plug_switch,grasptype_10,weak,index_finger
+Grip the handle of the screwdriver tightly.,screwdriver_handle,grasptype_2,0,0
+Grip the hammer for hammering nails.,hammer_handle,grasptype_2,0,0
+Grip the cup by its handle.,cup_handle,grasptype_7,0,0
+Use a firm grip to hold the pliers.,pliers_handle,grasptype_14,medium,thumb
+Grip the bottle firmly to avoid slipping.,bottle_body,grasptype_7,0,0
+Grip the spatula to flip the food.,spatula_handle,grasptype_2,0,0
+Grip the drill handle before operating.,drill_handle,grasptype_2,0,0
+Grip the scissors for precise cutting.,scissors_handle,grasptype_13,medium,thumb
+Grip the doorknob to open the door.,doorknob_handle,grasptype_8,0,0
+Grip the mouse to move the cursor.,mouse_body,grasptype_10,0,0
+hold the knife steady.,knife_handle,grasptype_11,0,0
+Clamp the bottle cap before opening.,bottle_cap,grasptype_12,medium,middle_finger
+Clamp the valve tightly for safety.,valve_head,grasptype_12,medium,middle_finger
+Clamp the light switch panel in place.,light_switch_panel,grasptype_5,0,0
+Clamp the screwdriver in the holder.,screwdriver_handle,grasptype_2,0,0
+Use the pliers to clamp the stapler pin.,pliers_handle,grasptype_14,medium,thumb
+Clamp the cup to prevent it from tipping over.,cup_body,grasptype_7,0,0
+Clamp the hammer to the workbench.,hammer_handle,grasptype_2,0,0
+Clamp the scissors on the hanger.,scissors_handle,grasptype_13,medium,thumb
+Open the bottle by turning the cap.,bottle_head,grasptype_12,medium,middle_finger
+Open the kettle lid to fill it with water.,electric_kettle_lid,grasptype_10,strong,index_finger
+Open the plug’s safety cover.,plug_cover,grasptype_5,0,0
+Open the valve to start water flow.,valve_head,grasptype_12,medium,middle_finger
+Open the doorknob to enter the room.,doorknob_handle,grasptype_8,0,0
+Open the stapler for a new set of staples.,stapler_body,grasptype_5,0,0
+Open the light switch panel for repair.,light_switch_panel,grasptype_5,0,0
+Open the drill cover for maintenance.,drill_cover,grasptype_5,0,0
+Open the cup lid to pour in tea.,cup_lid,grasptype_5,0,0
+Open the scissors to cut fabric.,scissors_handle,grasptype_13,medium,thumb
+Hold the screwdriver and get ready to tighten the screw.,screwdriver_handle,grasptype_2,0,0
+Hold the spray bottle for watering the plants.,spray_bottle_handle,grasptype_1,0,0
+Hold the drill steady during operation.,drill_handle,grasptype_2,0,0
+Hold the stapler to bind papers together.,stapler_body,grasptype_4,0,0
+Hold the flashlight to see in the dark.,flashlight_body,grasptype_3,0,0
+Hold the plug before inserting it into the socket.,plug_head,grasptype_5,medium,thumb
+Hold the mouse for long periods of work.,mouse_body,grasptype_10,weak,0
+Hold the kettle while pouring water.,electric_kettle_handle,grasptype_8,0,0
+Hold the hammer for hammering nails.,hammer_handle,grasptype_2,0,0
+Hold the spatula for flipping pancakes.,spatula_handle,grasptype_2,0,0
+Hold the cup to take a sip of tea.,cup_handle,grasptype_7,0,0
+Hold the bottle to pour out the drink.,bottle_body,grasptype_7,0,0
+Hold the knife to cut vegetables.,knife_handle,grasptype_11,0,0
+Hold the pliers to bend a wire.,pliers_handle,grasptype_14,medium,thumb
+Hold the valve while adjusting its position.,valve_head,grasptype_12,medium,middle_finger
+Hold the scissors for trimming flowers.,scissors_handle,grasptype_13,medium,thumb
+Hold the doorknob to keep the door open.,doorknob_handle,grasptype_8,0,0
+Hold the light switch gently,light_switch_switch,grasptype_10,0,0
+Use the screwdriver to tighten a loose screw.,screwdriver_button,grasptype_1,strong,index_finger
+Firmly press the spray bottle button to clean the window.,spray_bottle_button,grasptype_1,strong,index_finger
+Turn on the flashlight so you can see in the dark.,flashlight_switch,grasptype_3,strong,thumb
+Fasten the plug into the wall socket to power the device.,plug_head,grasptype_5,0,0
+Pour water from the kettle into the cup.,electric_kettle_handle,grasptype_8,0,0
+Cut a piece of paper for me.,scissors_handle,grasptype_13,medium,thumb
+Remove the bottle cap to drink.,bottle_cap,grasptype_12,medium,middle_finger
+Tighten the screw on the table leg.,screwdriver_button,grasptype_1,strong,index_finger
+Secure the valve so that it doesn’t leak.,valve_head,grasptype_12,medium,middle_finger
+Attach the light switch cover after finishing repairs.,light_switch_cover,grasptype_5,0,0
+Slice the bread for breakfast.,knife_handle,grasptype_11,0,0
+Squeeze the spray bottle to mist the plants.,spray_bottle_button,grasptype_1,strong,index_finger
+Take out the staples from the stapler.,stapler_body,grasptype_5,0,0
+Insert the drill bit and get ready to make a hole.,drill_button,grasptype_1,strong,index_finger
+Pull the scissors apart to open them.,scissors_handle,grasptype_13,medium,thumb
+Unscrew the lid of the jar.,jar_lid,grasptype_12,medium,middle_finger
+Flip the pancake with the spatula.,spatula_head,grasptype_2,0,0
+Pull the doorknob to open the door.,doorknob_handle,grasptype_8,0,0
+Adjust the valve to let more water flow.,valve_head,grasptype_12,medium,middle_finger
+Turn on the lamp by flipping the switch.,light_switch_switch,grasptype_10,weak,index_finger
+Unplug the device from the wall.,plug_head,grasptype_5,0,0
+Make a hole in the wall for hanging a picture.,drill__button,grasptype_1,strong,index_finger
+Peel the fruit using the knife.,knife_handle,grasptype_11,0,0
+Pour juice from the bottle into a glass.,bottle_body,grasptype_7,0,0
+Pull out the nail with the hammer’s back.,hammer_handle,grasptype_2,0,0
+Mix the ingredients in the bowl with the spatula.,spatula_head,grasptype_2,0,0
+Cut off the extra wire with the pliers.,pliers_handle,grasptype_14,medium,thumb
+Switch on the computer with the mouse.,mouse_button,grasptype_10,weak,index_finger
+Lift the cup to your mouth.,cup_handle,grasptype_7,0,0
+Arrange the scissors in the drawer.,scissors_handle,grasptype_13,0,0
+Pick up the flashlight and shine it under the table.,flashlight_switch,grasptype_3,strong,thumb
+Remove the safety cover from the plug.,plug_head,grasptype_5,0,0
+shine flashlight under the table.,flashlight_switch,grasptype_3,strong,thumb

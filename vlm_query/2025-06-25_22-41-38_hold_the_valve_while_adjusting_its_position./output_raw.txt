@@ -1,0 +1,9 @@
+```
+    g^a: valve_head
+
+    g^t: grasptype_12
+
+    g^f: 0
+
+    g^r: 0
+```

@@ -1,0 +1,7 @@
+    g^a: cup_lid
+
+    g^t: grasptype_12
+
+    g^f: medium
+
+    g^r: thumb

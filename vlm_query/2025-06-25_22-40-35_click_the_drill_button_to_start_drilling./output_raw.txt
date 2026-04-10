@@ -1,0 +1,9 @@
+```
+    g^a: drill_button
+
+    g^t: grasptype_1
+
+    g^f: strong
+
+    g^r: index_finger
+```

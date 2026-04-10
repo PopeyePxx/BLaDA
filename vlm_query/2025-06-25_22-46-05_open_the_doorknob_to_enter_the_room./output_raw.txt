@@ -1,0 +1,9 @@
+```
+    g^a: doorknob
+
+    g^t: grasptype_2
+
+    g^f: strong
+
+    g^r: 0
+```

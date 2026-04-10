@@ -1,0 +1,5 @@
+def stage1_subgoal_constraint1(end_effector, keypoints):
+    """Align the end-effector with the hammer (keypoint 0)."""
+    target_keypoint = keypoints[0]
+    cost = np.linalg.norm(end_effector - target_keypoint)  # Cost is the distance to the hammer
+    return cost

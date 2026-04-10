@@ -1,0 +1,7 @@
+    g^a: valve_head
+
+    g^t: grasptype_4
+
+    g^f: strong
+
+    g^r: thumb

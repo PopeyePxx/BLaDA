@@ -1,0 +1,7 @@
+    g^a: knife_blade
+
+    g^t: grasptype_2
+
+    g^f: 0
+
+    g^r: 0

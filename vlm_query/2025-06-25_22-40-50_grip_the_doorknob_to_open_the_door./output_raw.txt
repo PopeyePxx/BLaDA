@@ -1,0 +1,9 @@
+```
+    g^a: doorknob_handle
+
+    g^t: grasptype_8
+
+    g^f: 0
+
+    g^r: 0
+```

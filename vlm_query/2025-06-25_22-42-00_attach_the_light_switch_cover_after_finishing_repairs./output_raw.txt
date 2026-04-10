@@ -1,0 +1,9 @@
+```
+g^a: light_switch_switch
+
+g^t: grasptype_10
+
+g^f: 0
+
+g^r: 0
+```

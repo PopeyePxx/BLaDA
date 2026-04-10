@@ -1,0 +1,7 @@
+    g^a: doorknob
+
+    g^t: grasptype_1
+
+    g^f: strong
+
+    g^r: whole_hand

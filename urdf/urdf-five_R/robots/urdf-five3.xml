@@ -1,0 +1,137 @@
+<mujoco model="urdf-five3">
+    <compiler angle="radian" meshdir="../meshes/" />
+    <size njmax="500" nconmax="100" />
+    <option gravity="0 0 -9.8" collision="all"/>
+    <visual>
+        <rgba haze=".3 .3 .3 1"/>
+    </visual>
+    <default>
+        <joint damping="0.1"/>
+    </default>
+    <asset>
+        <texture type="skybox" builtin="gradient" rgb1="0.6 0.6 0.6" rgb2="0 0 0" width="512" height="512"/>
+        <texture name="texplane" type="2d" builtin="checker" rgb1=".25 .25 .25" rgb2=".3 .3 .3" width="512" height="512" mark="cross" markrgb=".8 .8 .8"/>
+        <material name="matplane" reflectance="0.3" texture="texplane" texrepeat="1 1" texuniform="true"/>
+        <mesh name="Link111" file="Link111.STL" />
+        <mesh name="Link1" file="Link1.STL" />
+        <mesh name="Link11" file="Link11.STL" />
+        <mesh name="Link2" file="Link2.STL" />
+        <mesh name="Link22" file="Link22.STL" />
+        <mesh name="Link3" file="Link3.STL" />
+        <mesh name="Link33" file="Link33.STL" />
+        <mesh name="Link4" file="Link4.STL" />
+        <mesh name="Link44" file="Link44.STL" />
+        <mesh name="Link5" file="Link5.STL" />
+        <mesh name="Link51" file="Link51.STL" />
+        <mesh name="Link52" file="Link52.STL" />
+        <mesh name="Link53" file="Link53.STL" />
+    </asset>
+    <worldbody>
+       <geom name="floor" pos="0 0 -0.5" size="0 0 1" type="plane" material="matplane"/>
+       <light directional="true" diffuse=".8 .8 .8" specular=".2 .2 .2" pos="0 0 5" dir="0 0 -1"/>
+       <body name="hand" pos="0 0 0">
+        <geom type="mesh" contype="0" conaffinity="0" group="1" rgba="0.827451 0.839216 0.827451 1" mesh="Link111" />
+        <geom type="mesh" rgba="0.827451 0.839216 0.827451 1" mesh="Link111" />
+        <body name="Link1" pos="0.08225 -0.0077547 -0.0040172" quat="0.997202 2.6016e-10 -1.95042e-11 -0.0747602">
+            <inertial pos="0.010773 0.00213782 -1.34009e-07" quat="-0.0352808 0.706222 0.0352803 0.706231" mass="0.00330621" diaginertia="5.55164e-07 5.3418e-07 1.52042e-07" />
+            <joint name="Link1" pos="0 0 0" axis="0 0 1" limited="true" range="-1.6 0" />
+            <geom type="mesh" contype="0" conaffinity="0" group="1" rgba="0.792157 0.819608 0.933333 1" mesh="Link1" />
+            <geom type="mesh" rgba="0.792157 0.819608 0.933333 1" mesh="Link1" />
+            <body name="Link11" pos="0.032132 0 0" quat="0.993665 -2.59237e-10 -2.93171e-11 -0.112382">
+                <inertial pos="0.0190179 0.00563448 1.90796e-08" quat="-0.0191371 0.706849 0.0191371 0.706847" mass="0.00453367" diaginertia="7.68831e-07 7.60213e-07 8.37164e-08" />
+                <joint name="Link11" pos="0 0 0" axis="0 0 1" limited="true" range="-1.7 0" />
+                <geom type="mesh" contype="0" conaffinity="0" group="1" rgba="1 1 1 1" mesh="Link11" />
+                <geom type="mesh" rgba="1 1 1 1" mesh="Link11" />
+            </body>
+        </body>
+        <body name="Link2" pos="0.081939 -0.0077547 0.015305" quat="0.996589 0.00140796 -0.0173955 -0.0806566">
+            <inertial pos="0.010773 0.00213784 -1.14076e-07" quat="-0.0352805 0.706222 0.0352801 0.70623" mass="0.00330622" diaginertia="5.55164e-07 5.3418e-07 1.52042e-07" />
+            <joint name="Link2" pos="0 0 0" axis="0 0 1" limited="true" range="-1.6 0" />
+            <geom type="mesh" contype="0" conaffinity="0" group="1" rgba="0.792157 0.819608 0.933333 1" mesh="Link2" />
+            <geom type="mesh" rgba="0.792157 0.819608 0.933333 1" mesh="Link2" />
+            <body name="Link22" pos="0.032132 0 0" quat="0.993629 -2.5923e-10 -2.94021e-11 -0.1127">
+                <inertial pos="0.0190179 0.00563448 1.97664e-08" quat="-0.0191374 0.706849 0.0191374 0.706847" mass="0.00453367" diaginertia="7.68832e-07 7.60214e-07 8.37163e-08" />
+                <joint name="Link22" pos="0 0 0" axis="0 0 1" limited="true" range="-1.7 0" />
+                <geom type="mesh" contype="0" conaffinity="0" group="1" rgba="1 1 1 1" mesh="Link22" />
+                <geom type="mesh" rgba="1 1 1 1" mesh="Link22" />
+            </body>
+        </body>
+        <body name="Link3" pos="0.080765 -0.0077547 0.034505" quat="0.997273 0.00259911 -0.0435418 -0.0595374">
+            <inertial pos="0.0107731 0.00213783 -8.57329e-08" quat="-0.0352808 0.706223 0.0352805 0.70623" mass="0.00330615" diaginertia="5.5516e-07 5.34175e-07 1.5204e-07" />
+            <joint name="Link3" pos="0 0 0" axis="0 0 1" limited="true" range="-1.6 0" />
+            <geom type="mesh" contype="0" conaffinity="0" group="1" rgba="0.792157 0.819608 0.933333 1" mesh="Link3" />
+            <geom type="mesh" rgba="0.792157 0.819608 0.933333 1" mesh="Link3" />
+            <body name="Link33" pos="0.032132 0 0" quat="0.991025 -2.58552e-10 -3.48714e-11 -0.133674">
+                <inertial pos="0.0190179 0.00563447 1.7005e-08" quat="-0.019137 0.706848 0.0191371 0.706847" mass="0.00453367" diaginertia="7.68831e-07 7.60213e-07 8.37164e-08" />
+                <joint name="Link33" pos="0 0 0" axis="0 0 1" limited="true" range="-1.7 0" />
+                <geom type="mesh" contype="0" conaffinity="0" group="1" rgba="1 1 1 1" mesh="Link33" />
+                <geom type="mesh" rgba="1 1 1 1" mesh="Link33" />
+            </body>
+        </body>
+        <body name="Link4" pos="0.078587 -0.0077547 0.053617" quat="0.994334 0.00560864 -0.069531 -0.0802149">
+            <inertial pos="0.010773 0.00213783 -7.95187e-08" quat="-0.0352807 0.706223 0.0352804 0.706229" mass="0.00330621" diaginertia="5.55164e-07 5.3418e-07 1.52042e-07" />
+            <joint name="Link4" pos="0 0 0" axis="0 0 1" limited="true" range="-1.6 0" />
+            <geom type="mesh" contype="0" conaffinity="0" group="1" rgba="0.792157 0.819608 0.933333 1" mesh="Link4" />
+            <geom type="mesh" rgba="0.792157 0.819608 0.933333 1" mesh="Link4" />
+            <body name="Link44" pos="0.032132 0 0" quat="0.992825 -2.59019e-10 -3.11971e-11 -0.119573">
+                <inertial pos="0.0155925 0.00555619 -1.21775e-07" quat="-0.0259642 0.706632 0.0257978 0.706634" mass="0.00356886" diaginertia="4.39761e-07 4.354e-07 6.47934e-08" />
+                <joint name="Link44" pos="0 0 0" axis="0 0 1" limited="true" range="-1.7 0" />
+                <geom type="mesh" contype="0" conaffinity="0" group="1" rgba="1 1 1 1" mesh="Link44" />
+                <geom type="mesh" rgba="1 1 1 1" mesh="Link44" />
+            </body>
+        </body>
+        <body name="Link5" pos="0.0089225 -0.022949 -0.00699" quat="0.593526 0.404826 0.38433 -0.57977">
+            <inertial pos="-0.000668288 -0.00209321 0.00376334" quat="-0.0538454 0.628063 0.0808594 0.772075" mass="0.00487391" diaginertia="2.15394e-07 1.72318e-07 1.24984e-07" />
+            <joint name="Link5" pos="-0.005 -0.00275 0.00425" axis="0 1 0" limited="true" range="-1 0.3" />
+            <geom type="mesh" contype="0" conaffinity="0" group="1" rgba="0.827451 0.839216 0.827451 1" mesh="Link5" />
+            <geom type="mesh" rgba="0.827451 0.839216 0.827451 1" mesh="Link5" />
+            <body name="Link51" pos="0.0065 -0.0035 0.00425" quat="-3.25194e-06 0.885313 0.464996 -1.70803e-06">
+                <inertial pos="0.0261732 0.00353702 -1.92601e-07" quat="0.0149727 0.706944 -0.0149773 0.706952" mass="0.00652729" diaginertia="2.75022e-06 2.37637e-06 8.91154e-07" />
+                <joint name="Link51" pos="0 0 0" axis="0 0 -1" limited="true" range="0 0.4" />
+                <geom type="mesh" contype="0" conaffinity="0" group="1" rgba="0.792157 0.819608 0.933333 1" mesh="Link51" />
+                <geom type="mesh" rgba="0.792157 0.819608 0.933333 1" mesh="Link51" />
+                <body name="Link52" pos="0.056001 0 0" quat="0.0876338 0 0 0.996153">
+                    <inertial pos="-0.00731612 -0.00552223 2.1461e-07" quat="0.124858 0.695989 -0.124855 0.696003" mass="0.00226953" diaginertia="2.99631e-07 2.94813e-07 1.56044e-07" />
+                    <joint name="Link52" pos="0 0 0" axis="0 0 1" limited="true" range="-0.4 0" />
+                    <geom type="mesh" contype="0" conaffinity="0" group="1" rgba="0.827451 0.839216 0.827451 1" mesh="Link52" />
+                    <geom type="mesh" rgba="0.827451 0.839216 0.827451 1" mesh="Link52" />
+                    <body name="Link53" pos="-0.022653 0 0" quat="0.458899 0.537968 -0.458901 0.53797">
+                        <inertial pos="-3.39376e-06 0.010623 0.000584861" quat="0.784036 0.620711 -0.00192012 0.00135994" mass="0.0033087" diaginertia="1.9617e-07 1.91288e-07 8.09852e-08" />
+                        <joint name="Link53" pos="0 0 0" axis="1 0 0" limited="true" range="-1 0" />
+                        <geom type="mesh" contype="0" conaffinity="0" group="1" rgba="0.827451 0.839216 0.827451 1" mesh="Link53" />
+                        <geom type="mesh" rgba="0.827451 0.839216 0.827451 1" mesh="Link53" />
+                    </body>
+                </body>
+            </body>
+        </body>
+      </body>
+    </worldbody>
+
+    <contact>
+      <exclude body1="hand" body2="Link1"/>
+      <exclude body1="hand" body2="Link2"/>
+      <exclude body1="hand" body2="Link3"/>
+      <exclude body1="hand" body2="Link4"/>
+      <exclude body1="hand" body2="Link5"/>
+
+      <exclude body1="hand" body2="Link51"/>
+      <exclude body1="Link5" body2="Link51"/>
+      <exclude body1="Link51" body2="Link52"/>
+      <exclude body1="Link52" body2="Link53"/>
+    </contact>
+
+    <actuator>
+      <position name='LINK1' joint='Link1' ctrllimited="true" ctrlrange="-1.6 0"/>
+      <position name='LINK11' joint='Link11' ctrllimited="true" ctrlrange="-1.7 0"/>
+      <position name='LINK2' joint='Link2' ctrllimited="true" ctrlrange="-1.6 0"/>
+      <position name='LINK22' joint='Link22' ctrllimited="true" ctrlrange="-1.7 0"/>
+      <position name='LINK3' joint='Link3' ctrllimited="true" ctrlrange="-1.6 0"/>
+      <position name='LINK33' joint='Link33' ctrllimited="true" ctrlrange="-1.7 0"/>
+      <position name='LINK4' joint='Link4' ctrllimited="true" ctrlrange="-1.6 0"/>
+      <position name='LINK44' joint='Link44' ctrllimited="true" ctrlrange="-1.7 0"/>
+      <position name='LINK5' joint='Link5' ctrllimited="true" ctrlrange="-1 0.3"/>
+      <position name='LINK51' joint='Link51' ctrllimited="true" ctrlrange="0 0.4"/>
+      <position name='LINK52' joint='Link52' ctrllimited="true" ctrlrange="-0.4 0"/>
+      <position name='LINK53' joint='Link53' ctrllimited="true" ctrlrange="-1 0"/>
+    </actuator>
+</mujoco>

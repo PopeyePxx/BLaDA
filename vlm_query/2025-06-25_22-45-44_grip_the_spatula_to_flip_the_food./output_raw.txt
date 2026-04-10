@@ -1,0 +1,9 @@
+```
+    g^a: spatula_handle
+
+    g^t: grasptype_1
+
+    g^f: 0
+
+    g^r: 0
+```

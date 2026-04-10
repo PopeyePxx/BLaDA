@@ -1,0 +1,7 @@
+    g^a: light_switch_panel
+
+    g^t: grasptype_1
+
+    g^f: 0
+
+    g^r: 0

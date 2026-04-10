@@ -1,0 +1,7 @@
+    g^a: valve_handle
+
+    g^t: grasptype_1
+
+    g^f: medium
+
+    g^r: index_finger

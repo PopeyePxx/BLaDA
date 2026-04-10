@@ -1,0 +1,9 @@
+```
+g^a: bottle_body
+
+g^t: grasptype_7
+
+g^f: strong
+
+g^r: 0
+```

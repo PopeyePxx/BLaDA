@@ -1,0 +1,7 @@
+    g^a: kettle_button
+
+    g^t: grasptype_4
+
+    g^f: strong
+
+    g^r: thumb

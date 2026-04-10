@@ -1,0 +1,9 @@
+```
+    g^a: electric_kettle_handle
+
+    g^t: grasptype_3
+
+    g^f: 0
+
+    g^r: 0
+```
