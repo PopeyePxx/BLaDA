@@ -99,5 +99,13 @@ The 3DGS code has been adapted from [GraspSplats]([https://github.com/atenpas/gp
 
 If you find this project useful, please consider citing the following paper:
 ```bibtex
-
+@misc{yang2026bladabridginglanguagefunctional,
+      title={BLaDA: Bridging Language to Functional Dexterous Actions within 3DGS Fields}, 
+      author={Fan Yang and Wenrui Chen and Guorun Yan and Ruize Liao and Wanjun Jia and Dongsheng Luo and Kailun Yang and Zhiyong Li and Yaonan Wang},
+      year={2026},
+      eprint={2604.08410},
+      archivePrefix={arXiv},
+      primaryClass={cs.CV},
+      url={https://arxiv.org/abs/2604.08410}, 
+}
 ```
