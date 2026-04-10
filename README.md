@@ -1,5 +1,5 @@
-# DexLVA
-[**DexLVA: Zero-Shot Language-Guided Functional Dexterous Manipulation with 3D Gaussian Affordances**](https://graspsplats.github.io/)
+# BLADA
+[**BLaDA: Bridging Language to Functional Dexterous Actions within 3DGS Fields**](https://arxiv.org/pdf/2604.08410)
 ## Installation
 
 1. **Create the environment**
